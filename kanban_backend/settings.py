@@ -54,8 +54,11 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
     ],
-    "DATETIME_FORMAT": "%Y-%m-%dT%H:%M:%S.%fZ",
-    "DATE_FORMAT": "%Y-%m-%dT%H:00:00.00000Z",
+    # 'DATETIME_FORMAT': "%Y-%m-%dT%H:%M:%S.%fZ",
+    # 'DATE_FORMAT': "%Y-%m-%dT%-:%M:%S.%fZ",
+
+    "DATE_FORMAT": "%-d %b, %y",
+    "DATETIME_FORMAT": "%-d %b, %y",
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3002",
@@ -140,4 +143,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
-MEDIA_URL = "/media/"
+MEDIA_URL= "/media/"
