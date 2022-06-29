@@ -54,8 +54,8 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
     ],
-    "DATE_FORMAT": "%-d %b, %y",
-    "DATETIME_FORMAT": "%-d %b, %y",
+    # "DATE_FORMAT": "%-d %b, %y",
+    # "DATETIME_FORMAT": "%-d %b, %y",
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3002",
