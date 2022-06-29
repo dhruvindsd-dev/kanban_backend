@@ -69,7 +69,9 @@ def new_todo(request):
         user=request.user,
         stage=0,
         priority=data["priority"],
-        deadline=datetime.strptime(data["deadLine"], "%Y-%m-%dT%H:%M:%S.%fZ").date(),
+        # 30th June, 2022
+        # 24-6-2022
+        deadline=datetime.strptime(data["deadLine"], "%d-%m-%Y").date(),
     )
 
     return Response(TodoSerializer(todo_obj).data)
@@ -89,8 +91,7 @@ def edit_todo(request):
 
     todo_obj.name = data["taskName"]
     todo_obj.priority = data["priority"]
-    todo_obj.deadline = parser.parse(data["deadLine"]).date()
-    print(parser.parse(data["deadLine"]).strftime('%c'))
+    todo_obj.deadline = datetime.strptime(data["deadLine"], "%d-%m-%Y").date()
     todo_obj.save()
 
     return Response(TodoSerializer(todo_obj).data)
